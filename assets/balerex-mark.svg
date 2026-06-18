@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="BALEREX DIGITAL">
+  <defs>
+    <linearGradient id="bxNavy" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#16294f"/>
+      <stop offset="1" stop-color="#0a1733"/>
+    </linearGradient>
+    <linearGradient id="bxGold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e2c25a"/>
+      <stop offset="1" stop-color="#c19a2b"/>
+    </linearGradient>
+  </defs>
+  <rect x="14" y="14" width="484" height="484" rx="96" fill="url(#bxNavy)" stroke="url(#bxGold)" stroke-width="16"/>
+  <rect x="46" y="46" width="420" height="420" rx="72" fill="none" stroke="#c19a2b" stroke-opacity="0.45" stroke-width="3"/>
+  <!-- crown: connected dots forming a zig-zag -->
+  <g fill="url(#bxGold)" stroke="url(#bxGold)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="150,205 188,150 256,188 324,150 362,205" fill="none"/>
+    <circle cx="150" cy="205" r="17"/>
+    <circle cx="188" cy="150" r="20"/>
+    <circle cx="256" cy="188" r="16"/>
+    <circle cx="324" cy="150" r="20"/>
+    <circle cx="362" cy="205" r="17"/>
+  </g>
+  <!-- letter B -->
+  <text x="256" y="408" font-family="Georgia,'Times New Roman',serif" font-weight="700" font-size="300" text-anchor="middle" fill="url(#bxGold)">B</text>
+  <!-- small node accent bottom-right -->
+  <g fill="url(#bxGold)" stroke="url(#bxGold)" stroke-width="6" stroke-linecap="round">
+    <line x1="345" y1="395" x2="392" y2="360"/>
+    <circle cx="345" cy="395" r="11"/>
+    <circle cx="395" cy="357" r="9"/>
+  </g>
+</svg>
