@@ -33,25 +33,23 @@ BALEREX (marine profond + or).
 index.html               Page d'accueil
 styles.css               Charte graphique (marine + or, thèmes clair/sombre)
 script.js                Menu mobile, thème, reveal au défilement, slider, formulaire
-assets/balerex-mark.svg  Logo (le « B » couronné, recréé en SVG vectoriel)
-assets/equipe-balerex.png  Photo d'équipe (hero) — À DÉPOSER
-assets/conseil-data.png    Photo conseil/analytics (À propos) — À DÉPOSER
+assets/balerex-mark.svg    Logo (le « B » couronné, recréé en SVG vectoriel)
+assets/equipe-balerex.jpg  Photo d'équipe (hero) — 1536×1024, ~145 Ko
+assets/conseil-data.jpg    Photo conseil/analytics (À propos) — 1536×1024, ~150 Ko
 ```
 
-## Photos à ajouter
+## Photos
 
-Deux emplacements photo sont déjà intégrés au design. Déposez simplement les
-fichiers dans `assets/` avec **ces noms exacts** :
+Les deux photos illustrant le site sont dans `assets/` (JPG optimisés, ratio 3:2) :
 
 | Fichier | Emplacement | Sujet |
 |---|---|---|
-| `assets/equipe-balerex.png` | Hero (accueil) | Équipe autour d'un ordinateur / tablette |
-| `assets/conseil-data.png`   | Section « À propos » | Consultants analysant des tableaux de bord |
+| `assets/equipe-balerex.jpg` | Hero (accueil) | Équipe autour d'un ordinateur / tablette |
+| `assets/conseil-data.jpg`   | Section « À propos » | Consultants analysant des tableaux de bord |
 
-Ratio conseillé **3:2**. Tant qu'un fichier est absent, un dégradé de marque
-s'affiche à sa place (« Photo à ajouter ») — la mise en page reste intacte.
-Astuce : pour accélérer le site, une version JPG compressée (~150 Ko) est
-préférable au PNG d'origine (~2 Mo).
+Pour remplacer une photo, déposez un nouveau fichier au même nom (ratio 3:2
+conseillé). Si un fichier est absent, un dégradé de marque s'affiche à sa
+place (« Photo à ajouter ») — la mise en page reste intacte.
 
 ## Personnalisation
 
