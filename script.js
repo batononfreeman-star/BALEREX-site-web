@@ -105,20 +105,49 @@
     }
   }
 
-  /* ---------- Formulaire de contact (démo) ---------- */
-  const form = document.getElementById('ctaForm');
-  const feedback = document.getElementById('formFeedback');
-  if (form) {
+  /* ---------- Formulaires Web3Forms (envoi réel) ---------- */
+  const forms = document.querySelectorAll('form.web3form');
+  forms.forEach(function (form) {
+    const feedback = form.querySelector('.form-feedback');
+    const submitBtn = form.querySelector('[type="submit"]');
+    const submitLabel = submitBtn ? submitBtn.textContent : '';
+    const lang = (document.documentElement.getAttribute('lang') || 'fr').slice(0, 2);
+    const T = lang === 'en'
+      ? { sending: 'Sending…', ok: 'Thank you — your message has been sent. We will get back to you shortly.', err: 'Sorry, sending failed. Please try again or email us directly.' }
+      : { sending: 'Envoi…', ok: 'Merci — votre message a bien été envoyé. Nous revenons vers vous très vite.', err: "Désolé, l'envoi a échoué. Réessayez ou écrivez-nous directement par e-mail." };
+
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      const name = (form.querySelector('#name') || {}).value || '';
-      if (feedback) {
-        feedback.textContent = 'Merci ' + name.trim().split(' ')[0] +
-          ' — votre demande est bien notée. Nous revenons vers vous très vite.';
-      }
-      form.reset();
+      // Honeypot anti-spam : si coché, on ignore silencieusement.
+      const hp = form.querySelector('.hp-field');
+      if (hp && hp.checked) return;
+
+      if (feedback) { feedback.textContent = T.sending; feedback.classList.remove('is-error'); }
+      if (submitBtn) submitBtn.disabled = true;
+
+      const data = new FormData(form);
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: data
+      })
+        .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, j: j }; }); })
+        .then(function (res) {
+          if (res.ok && res.j.success) {
+            if (feedback) { feedback.textContent = T.ok; feedback.classList.remove('is-error'); }
+            form.reset();
+          } else {
+            throw new Error((res.j && res.j.message) || 'error');
+          }
+        })
+        .catch(function () {
+          if (feedback) { feedback.textContent = T.err; feedback.classList.add('is-error'); }
+        })
+        .finally(function () {
+          if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = submitLabel; }
+        });
     });
-  }
+  });
 
   /* ---------- Année dynamique (si besoin) ---------- */
   const yearEls = document.querySelectorAll('[data-year]');
