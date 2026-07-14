@@ -7,10 +7,20 @@ transformation & communication digitale pour les PMI et PME d'Afrique de l'Ouest
 
 ## Aperçu
 
-Maquette statique, sans dépendance ni build : il suffit d'ouvrir `index.html`
-dans un navigateur. La structure et le niveau de finition s'inspirent des
+Site statique **bilingue (FR / EN)**, sans dépendance ni build : il suffit
+d'ouvrir `index.html`. La structure et le niveau de finition s'inspirent des
 grands sites de conseil (type Capgemini), adaptés à l'identité de marque
 BALEREX (marine profond + or).
+
+- **Français** à la racine (`/index.html`, `/services.html`, …)
+- **Anglais** sous `/en/` (`/en/index.html`, `/en/services.html`, …)
+- Un sélecteur **FR / EN** dans la barre utilitaire relie chaque page à son équivalent.
+- **Formulaire de contact fonctionnel** via [Web3Forms](https://web3forms.com)
+  → les messages arrivent sur `majesticbalerexclub@gmail.com`.
+
+### Pages (× 2 langues)
+Accueil · Services (hub + 3 pôles) · Offres & Tarifs · À propos ·
+Blog (index + 3 articles) · Contact · Mentions légales · Confidentialité
 
 ### Sections
 - Barre utilitaire (langue, bascule thème clair/sombre)
